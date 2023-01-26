@@ -115,52 +115,6 @@ export const asyncRouterMap = [
         ]
       },
 
-      // profile
-      {
-        path: '/profile',
-        name: 'profile',
-        component: RouteView,
-        redirect: '/profile/basic',
-        meta: { title: 'menu.profile', icon: 'profile', permission: ['profile'] },
-        children: [
-          {
-            path: '/profile/basic',
-            name: 'ProfileBasic',
-            component: () => import('@/views/profile/basic'),
-            meta: { title: 'menu.profile.basic', permission: ['profile'] }
-          },
-          {
-            path: '/profile/advanced',
-            name: 'ProfileAdvanced',
-            component: () => import('@/views/profile/advanced/Advanced'),
-            meta: { title: 'menu.profile.advanced', permission: ['profile'] }
-          }
-        ]
-      },
-
-      // result
-      {
-        path: '/result',
-        name: 'result',
-        component: RouteView,
-        redirect: '/result/success',
-        meta: { title: 'menu.result', icon: 'check-circle-o', permission: ['result'] },
-        children: [
-          {
-            path: '/result/success',
-            name: 'ResultSuccess',
-            component: () => import(/* webpackChunkName: "result" */ '@/views/result/Success'),
-            meta: { title: 'menu.result.success', keepAlive: false, hiddenHeaderContent: true, permission: ['result'] }
-          },
-          {
-            path: '/result/fail',
-            name: 'ResultFail',
-            component: () => import(/* webpackChunkName: "result" */ '@/views/result/Error'),
-            meta: { title: 'menu.result.fail', keepAlive: false, hiddenHeaderContent: true, permission: ['result'] }
-          }
-        ]
-      },
-
       // Exception
       {
         path: '/exception',
